@@ -16,8 +16,6 @@ public class MessageListener extends ListenerAdapter {
 				msg.addReaction(":thumbs_down:").queue();
 			}
 		}
-		
-		System.out.println("[ DEBUG ] Üzenet érzékelve!");
 	}
 
 }

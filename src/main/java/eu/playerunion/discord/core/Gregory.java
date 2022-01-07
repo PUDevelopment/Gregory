@@ -133,6 +133,8 @@ public class Gregory {
 	}
 	
 	public void sendSupportMessage() {
+		// Vészhelyzeti esetre, ha eltűnne az üzenet.
+		
 		/** TextChannel channel = this.api.getTextChannelById(this.config.getSupportChannelId());
 		
 		 channel.sendMessage(":question:| **Segítségre van szükséged?**\n"

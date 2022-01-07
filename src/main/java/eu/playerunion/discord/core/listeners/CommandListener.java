@@ -73,7 +73,7 @@ public class CommandListener extends ListenerAdapter {
 		}
 		
 		if(e.getComponentId().equals("deleteTicket")) {
-			if(e.getChannel().getName().equals("hibajegy-" + e.getUser().getName()) || e.getMember().hasPermission(EnumSet.of(Permission.ADMINISTRATOR))) {
+			if(e.getChannel().getName().equals("segitseg-" + e.getUser().getName()) || e.getMember().hasPermission(EnumSet.of(Permission.ADMINISTRATOR))) {
 				e.reply("A hibajegy 5 másodperc múlva bezárja önmagát! Köszönjük, hogy felvetted velünk a kapcsolatot!").setEphemeral(false).queue();
 				
 				ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
@@ -87,8 +87,15 @@ public class CommandListener extends ListenerAdapter {
 		}
 	}
 	
+	/**
+	 * Hibajegy generálása.
+	 * 
+	 * @param guild A Guild.
+	 * @param user A User, aki kérte a hibajegyet.
+	 */
+	
 	private void generateTicket(Guild guild, Member user) {
-		guild.createTextChannel("hibajegy-" + user.getUser().getName())
+		guild.createTextChannel("segitseg-" + user.getUser().getName())
 		.addPermissionOverride(user, EnumSet.of(Permission.VIEW_CHANNEL, Permission.MESSAGE_SEND, Permission.MESSAGE_HISTORY), null)
 		.addPermissionOverride(guild.getPublicRole(), null, EnumSet.of(Permission.VIEW_CHANNEL))
 		.queue();
